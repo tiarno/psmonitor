@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="psmonitor : Monitor a server using psutil (python) + MongoDB + JavaScript for graphics" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>psmonitor</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tiarno/psmonitor">View on GitHub</a>
+
+          <h1 id="project_title">psmonitor</h1>
+          <h2 id="project_tagline">Monitor a server using psutil (python) + MongoDB + JavaScript for graphics</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tiarno/psmonitor/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tiarno/psmonitor/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="psmonitor" class="anchor" href="#psmonitor"><span class="octicon octicon-link"></span></a>psmonitor</h1>
+
+<p>Monitor a server using <code>psutil</code> (python) + MongoDB + JavaScript for graphics</p>
+
+<p>The data capture program runs in a cron job, inserting new data into a Mongodb
+capped collection.</p>
+
+<p>When you load the <code>psmonitor.html</code> file, <code>psmonitor.js</code> is loaded.
+The javascript makes an ajax call to get the appropriate data from Mongodb
+and the data is graphed as a time series.</p>
+
+<h2>
+<a name="requires" class="anchor" href="#requires"><span class="octicon octicon-link"></span></a>Requires</h2>
+
+<pre><code>* mongodb installation
+* pymongo python package
+* psutil python package
+* python 2.7
+* jquery + jqplot
+* web server to serve mongo data via ajax. (bottle example included)
+</code></pre>
+
+<p>Run psmonitor.py in a cron job, something like this to run every 5 minutes::</p>
+
+<pre><code>*/5 * * * * /usr/local/bin/python /usr/local/bin/psmonitor.py
+</code></pre>
+
+<h2>
+<a name="similar-projects" class="anchor" href="#similar-projects"><span class="octicon octicon-link"></span></a>Similar Projects</h2>
+
+<p><a href="https://github.com/Jahaja/psdash">psdash</a>
+<a href="https://github.com/KrapuulX/layer7-psdash">layer7-psdash</a></p>
+
+<h2>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<p>The following two screenshots are examples of the output from psmonitor.
+The complete list of charts, as configured:</p>
+
+<ul>
+<li>CPU User Percent</li>
+<li>CPU System Percent</li>
+<li>CPU IRQ</li>
+<li>CPU Nice Percent</li>
+<li>CPU Idle Percent</li>
+<li>Disk Free Space</li>
+<li>Memory Free Space</li>
+<li>AMD Process CPU Usage</li>
+</ul><p><img src="images/screenshot01.png" alt="example 1 screenshot"></p>
+
+<p><img src="images/screenshot02.png" alt="example 2 screenshot"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">psmonitor maintained by <a href="https://github.com/tiarno">tiarno</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
