@@ -26,8 +26,8 @@ Run psmonitor.py in a cron job, something like this to run every 5 minutes::
 
 Similar Projects
 -----------------
-![psdash](https://github.com/Jahaja/psdash)
-![layer7-psdash](https://github.com/KrapuulX/layer7-psdash)
+[psdash](https://github.com/Jahaja/psdash)
+[layer7-psdash](https://github.com/KrapuulX/layer7-psdash)
 
 Screenshots
 ------------
