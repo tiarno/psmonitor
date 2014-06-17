@@ -24,6 +24,26 @@ Run psmonitor.py in a cron job, something like this to run every 5 minutes::
 
     */5 * * * * /usr/local/bin/python /usr/local/bin/psmonitor.py
 
+Similar Projects
+-----------------
+![psdash](https://github.com/Jahaja/psdash)
+![layer7-psdash](https://github.com/KrapuulX/layer7-psdash)
+
+Screenshots
+------------
+
+The following two screenshots are examples of the output from psmonitor.
+The complete list of charts, as configured:
+
+  * CPU User Percent
+  * CPU System Percent
+  * CPU IRQ
+  * CPU Nice Percent
+  * CPU Idle Percent
+  * Disk Free Space
+  * Memory Free Space
+  * AMD Process CPU Usage
+
 ![example 1 screenshot](images/screenshot01.png)
 
 ![example 2 screenshot](images/screenshot02.png)
