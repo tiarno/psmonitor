@@ -18,7 +18,7 @@ Requires
     * mongodb installation
     * pymongo python package
     * psutil python package
-    * python 2.7
+    * python 2.x
     * jquery + jqplot
     * web server to serve mongo data via ajax. (bottle example included)
 
@@ -44,7 +44,7 @@ The complete list of charts, as configured:
   * CPU Idle Percent
   * Disk Free Space
   * Memory Free Space
-  * AMD Process CPU Usage
+  
 
 ![example 1 screenshot](images/screenshot01.png)
 

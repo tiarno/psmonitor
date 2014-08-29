@@ -5,7 +5,6 @@ load = Bottle()
 conn = pymongo.MongoReplicaSetClient(
     'example01.com, example02.com',
     replicaSet='rs1',
-    read_preference=pymongo.ReadPreference.SECONDARY_PREFERRED,
 )
 db = conn.reports
 
@@ -17,15 +16,14 @@ def get_loaddata(server):
     cpu_idle = list()
     cpu_irq = list()
 
-    disk_app_free = list()
     disk_root_free = list()
     phymem_free = list()
-    amd = list()
 
+    data_cursor = list()
     if server == 'example02':
-        data_cursor = db.monitor02.find()
+        data_cursor = db.example02.find()
     elif server == 'example01':
-        data_cursor = db.monitor01.find()
+        data_cursor = db.example01.find()
 
     for data in data_cursor:
         date = '%s' % data['date']
@@ -36,9 +34,8 @@ def get_loaddata(server):
         cpu_idle.append([date, data['cpu']['idle']])
         cpu_irq.append([date, data['cpu']['irq']])
 
-        disk_root_free.append([date, data['disk_root']['free']])
-        phymem_free.append([date, data['phymem']['free']])
-        amd.append([date, data['amd']])
+        disk_root_free.append([date, data['disk_root']])
+        phymem_free.append([date, data['phymem']])
 
     return {
             'cpu_user': cpu_user,
@@ -46,8 +43,6 @@ def get_loaddata(server):
             'cpu_system': cpu_system,
             'cpu_nice': cpu_nice,
             'cpu_idle': cpu_idle,
-            'disk_app_free': disk_app_free,
             'disk_root_free': disk_root_free,
             'phymem_free': phymem_free,
-            'amd': amd,
             }

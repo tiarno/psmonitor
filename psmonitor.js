@@ -11,7 +11,7 @@ $(document).ready(function(){
   };
   var jsonData = $.ajax({
       async: false,
-      url: "http://example02/load/example02",
+      url: "http://example02/load/example01",
       dataType:"json"
     });
   var cpu_user = [jsonData.responseJSON['cpu_user']];
@@ -21,7 +21,6 @@ $(document).ready(function(){
   var cpu_nice = [jsonData.responseJSON['cpu_nice']];
   var disk_root = [jsonData.responseJSON['disk_root_free']];
   var phymem = [jsonData.responseJSON['phymem_free']];
-  var amd = [jsonData.responseJSON['amd']];
 
   $.jqplot('cpu_user',  cpu_user, {
     title: "CPU User Percent: EXAMPLE01",
@@ -80,14 +79,5 @@ $(document).ready(function(){
           yaxis:{labelRenderer: $.jqplot.CanvasAxisLabelRenderer, tickOptions:{formatter: sizeformatter}}},
     series:[{lineWidth:1, showMarker: false}]
   });
-
-  $.jqplot('amd', amd, {
-    title: "AMD: EXAMPLE01",
-    highlighter: {show: true, sizeAdjust: 7.5},
-    cursor: {show: false},
-    axes:{xaxis:{renderer:$.jqplot.DateAxisRenderer, tickOptions:{formatString:"%a %H:%M"}}},
-    series:[{lineWidth:1, showMarker: false}]
-  });
-
 
 });
