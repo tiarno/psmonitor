@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "NodeJS Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Arnold",
+  "license": "ISC",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.2.3"
+  }
+}
