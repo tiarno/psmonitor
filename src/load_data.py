@@ -5,7 +5,7 @@ import pymongo
 import socket
 
 conn = pymongo.MongoClient()
-db = conn.saslatex
+db = conn.myserver
 
 def myapp_isup(name):
     up = 'false'
