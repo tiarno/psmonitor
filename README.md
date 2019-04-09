@@ -1,6 +1,15 @@
 psmonitor
 =========
 
+**Note:**
+The `master` branch is an ongoing update from python2 to python3. I will announce
+the accompanying blog article once the code is complete. The `python2` branch 
+corresponds to the earlier version that goes along with the 
+previous [article](https://reachtim.com/articles/psutil-and-mongodb-for-system-monitoring.html).
+
+
+## The following text goes with the `python2` branch.
+
 Monitor a server using `psutil` (python) + MongoDB + JavaScript for graphics
 
 Full documentation here: http://tiarno.github.io/psmonitor
