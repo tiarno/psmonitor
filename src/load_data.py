@@ -7,15 +7,15 @@ import socket
 conn = pymongo.MongoClient()
 db = conn.myserver
 
-def myapp_isup(name):
-    up = 'false'
+def is_up(name):
+    up = False
     if name.startswith('myserver'):
         for conn in psutil.net_connections():
             if conn.laddr.port == 10000:
-                up = 'true'
+                up = True
                 break
     else:
-        up = 'NA'
+        up = None
     return up
 
 def main():
@@ -24,10 +24,10 @@ def main():
         'server': server_name,
         'date' : datetime.now(),
         'cpu' : psutil.cpu_percent(interval=1),
-        'disk_app' : psutil.disk_usage('/AppDocs').free,
+        'disk_app' : psutil.disk_usage('/Apps').free,
         'disk_root' : psutil.disk_usage('/').free,
-        'phymem' : psutil.virtual_memory().free,
-        'myapp': myapp_isup(server_name)
+        'memory' : psutil.virtual_memory().free,
+        'myapp': is_up(server_name)
     }
     db.monitor.insert(doc)
 
