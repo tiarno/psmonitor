@@ -10,8 +10,6 @@ The code here corresponds to the new [article](https://reachtim.com/articles/diy
 
 Monitor a server using `psutil` (python) + MongoDB + JavaScript for graphics
 
-Full documentation here: http://tiarno.github.io/psmonitor
-
 The data capture program runs in a cron job, inserting new data into a Mongodb
 capped collection.
 
