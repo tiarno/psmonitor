@@ -25,7 +25,7 @@
     <table>
       <tr>
         <td><canvas id="myserver00cpu"></canvas></td>
-        <td><canvas id="myserver00mem"></canvas></td>
+        <td><canvas id="myserver00memory"></canvas></td>
         <td><canvas id="myserver00disk_root"></canvas></td>
         <td><canvas id="myserver00disk_app"></canvas></td>
       </tr>
@@ -37,7 +37,7 @@
       <table>
           <tr>
             <td><canvas id="myserver01cpu"></canvas></td>
-            <td><canvas id="myserver01mem"></canvas></td>
+            <td><canvas id="myserver01memory"></canvas></td>
             <td><canvas id="myserver01disk_root"></canvas></td>
             <td><canvas id="myserver01disk_app"></canvas></td>
           </tr>
@@ -55,12 +55,12 @@
   <script src="./js/mychart.js"></script>
   <script>
    getApiData('myserver00')
-    .then(data => makeChart(data.name, data, 'mem'))
+    .then(data => makeChart(data.name, data, 'memory'))
     .then(data => makeChart(data.name, data, 'cpu'))
     .then(data => makeChart(data.name, data, 'disk_root'))
     .then(data => makeChart(data.name, data, 'disk_app'));
   getApiData('myserver01')
-    .then(data => makeChart(data.name, data, 'mem'))
+    .then(data => makeChart(data.name, data, 'memory'))
     .then(data => makeChart(data.name, data, 'cpu'))
     .then(data => makeChart(data.name, data, 'disk_root'))
     .then(data => makeChart(data.name, data, 'disk_app'));
